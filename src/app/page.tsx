@@ -1,10 +1,12 @@
 import { Spotlight } from "@/components/ui/spotlight";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, FileText, TrendingUp, UserCheck } from "lucide-react";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default function Home() {
   return (
     <>
+      {/* Hero Section (keep as is) */}
       <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-black">
         <Spotlight className="-top-40 left-0 md:-top-20 md:left-60" fill="white" />
         <div className="relative z-10 max-w-4xl text-center px-4">
@@ -22,13 +24,55 @@ export default function Home() {
             <Button size="lg" className="gap-2">
               Start Free Now <ArrowRight className="h-5 w-5" />
             </Button>
-            <Button size="lg" variant="outline" className="text-white border-white">
+            <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-black">
               Watch Demo
             </Button>
           </div>
         </div>
       </section>
-      {/* More sections coming soon */}
+
+      {/* New Features Section */}
+      <section className="py-20 bg-gray-50 dark:bg-black">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <h2 className="text-4xl font-bold text-center mb-12">
+            Your Complete Freelance Toolkit
+          </h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card>
+              <CardHeader>
+                <UserCheck className="h-10 w-10 text-primary mb-4" />
+                <CardTitle>Profile Analyzer</CardTitle>
+                <CardDescription>Instant feedback on your Upwork/Fiverr profile</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p>Paste your profile → Get strengths, weaknesses, and 5 fixes in Urdu/English.</p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <FileText className="h-10 w-10 text-primary mb-4" />
+                <CardTitle>Proposal Generator</CardTitle>
+                <CardDescription>Win more jobs with tailored cover letters</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p>Paste job description → Get a professional, personalized proposal instantly.</p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <TrendingUp className="h-10 w-10 text-primary mb-4" />
+                <CardTitle>Gig Suggester</CardTitle>
+                <CardDescription>Discover trending skills & gigs</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p>Input your skills → Get 2026 hot gigs with learning resources.</p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
